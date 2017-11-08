@@ -55,7 +55,7 @@ namespace El_Poeta
             }
 
         }
-
+//Hasta aqui para seguir
         private void generate_Poem(object sender, EventArgs e)
         {
 
