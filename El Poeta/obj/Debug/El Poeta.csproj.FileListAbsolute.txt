@@ -1,10 +1,20 @@
-C:\Users\Joseph Salas\source\repos\El Poeta\El Poeta\bin\Debug\El Poeta.exe.config
-C:\Users\Joseph Salas\source\repos\El Poeta\El Poeta\bin\Debug\El Poeta.exe
-C:\Users\Joseph Salas\source\repos\El Poeta\El Poeta\bin\Debug\El Poeta.pdb
-C:\Users\Joseph Salas\source\repos\El Poeta\El Poeta\obj\Debug\El Poeta.csprojResolveAssemblyReference.cache
-C:\Users\Joseph Salas\source\repos\El Poeta\El Poeta\obj\Debug\El_Poeta.Properties.Resources.resources
-C:\Users\Joseph Salas\source\repos\El Poeta\El Poeta\obj\Debug\El Poeta.csproj.GenerateResource.Cache
-C:\Users\Joseph Salas\source\repos\El Poeta\El Poeta\obj\Debug\El Poeta.csproj.CoreCompileInputs.cache
-C:\Users\Joseph Salas\source\repos\El Poeta\El Poeta\obj\Debug\El Poeta.exe
-C:\Users\Joseph Salas\source\repos\El Poeta\El Poeta\obj\Debug\El Poeta.pdb
-C:\Users\Joseph Salas\source\repos\El Poeta\El Poeta\obj\Debug\El_Poeta.Form1.resources
+C:/Users/Joseph Salas/source/repos/El Poeta/El Poeta/bin/Debug/El Poeta.exe.config
+C:/Users/Joseph Salas/source/repos/El Poeta/El Poeta/bin/Debug/El Poeta.exe
+C:/Users/Joseph Salas/source/repos/El Poeta/El Poeta/bin/Debug/El Poeta.pdb
+C:/Users/Joseph Salas/source/repos/El Poeta/El Poeta/obj/Debug/El Poeta.csprojResolveAssemblyReference.cache
+C:/Users/Joseph Salas/source/repos/El Poeta/El Poeta/obj/Debug/El_Poeta.Properties.Resources.resources
+C:/Users/Joseph Salas/source/repos/El Poeta/El Poeta/obj/Debug/El Poeta.csproj.GenerateResource.Cache
+C:/Users/Joseph Salas/source/repos/El Poeta/El Poeta/obj/Debug/El Poeta.csproj.CoreCompileInputs.cache
+C:/Users/Joseph Salas/source/repos/El Poeta/El Poeta/obj/Debug/El Poeta.exe
+C:/Users/Joseph Salas/source/repos/El Poeta/El Poeta/obj/Debug/El Poeta.pdb
+C:/Users/Joseph Salas/source/repos/El Poeta/El Poeta/obj/Debug/El_Poeta.Form1.resources
+/Users/albertoobando/Documents/Universidad/IV Semestre/Analisis de Algoritmos/Progra_3/ElPoeta/El Poeta/obj/Debug/El Poeta.csprojResolveAssemblyReference.cache
+/Users/albertoobando/Documents/Universidad/IV Semestre/Analisis de Algoritmos/Progra_3/ElPoeta/El Poeta/obj/Debug/El_Poeta.Form1.resources
+/Users/albertoobando/Documents/Universidad/IV Semestre/Analisis de Algoritmos/Progra_3/ElPoeta/El Poeta/obj/Debug/El_Poeta.Properties.Resources.resources
+/Users/albertoobando/Documents/Universidad/IV Semestre/Analisis de Algoritmos/Progra_3/ElPoeta/El Poeta/obj/Debug/El Poeta.csproj.GenerateResource.Cache
+/Users/albertoobando/Documents/Universidad/IV Semestre/Analisis de Algoritmos/Progra_3/ElPoeta/El Poeta/obj/Debug/El Poeta.csproj.CoreCompileInputs.cache
+/Users/albertoobando/Documents/Universidad/IV Semestre/Analisis de Algoritmos/Progra_3/ElPoeta/El Poeta/obj/Debug/El Poeta.exe
+/Users/albertoobando/Documents/Universidad/IV Semestre/Analisis de Algoritmos/Progra_3/ElPoeta/El Poeta/obj/Debug/El Poeta.pdb
+/Users/albertoobando/Documents/Universidad/IV Semestre/Analisis de Algoritmos/Progra_3/ElPoeta/El Poeta/bin/Debug/El Poeta.exe.config
+/Users/albertoobando/Documents/Universidad/IV Semestre/Analisis de Algoritmos/Progra_3/ElPoeta/El Poeta/bin/Debug/El Poeta.exe
+/Users/albertoobando/Documents/Universidad/IV Semestre/Analisis de Algoritmos/Progra_3/ElPoeta/El Poeta/bin/Debug/El Poeta.pdb
