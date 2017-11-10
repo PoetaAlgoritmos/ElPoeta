@@ -14,9 +14,8 @@ namespace El_Poeta
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            N_Grams test = new N_Grams();
+            test.generateNGram();
         }
     }
 }

@@ -2,9 +2,10 @@
   <MonoDevelop.Ide.ItemProperties.El_220Poeta PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="El Poeta/N_Grams.cs">
     <Files>
-      <File FileName="El Poeta/Program.cs" Line="1" Column="1" />
+      <File FileName="El Poeta/Program.cs" Line="18" Column="34" />
       <File FileName="El Poeta/Form1.cs" Line="1" Column="1" />
-      <File FileName="El Poeta/N_Grams.cs" Line="28" Column="83" />
+      <File FileName="El Poeta/N_Grams.cs" Line="69" Column="22" />
+      <File FileName="El Poeta/Properties/Manhattan.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -76,6 +76,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="N_Grams.cs" />
+    <Compile Include="Properties\Manhattan.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
