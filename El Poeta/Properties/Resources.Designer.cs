@@ -63,9 +63,9 @@ namespace El_Poeta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BACK {
+        internal static System.Drawing.Bitmap _111851_golden_floral_pattern {
             get {
-                object obj = ResourceManager.GetObject("BACK", resourceCulture);
+                object obj = ResourceManager.GetObject("111851-golden-floral-pattern", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,19 +73,9 @@ namespace El_Poeta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BackGround {
+        internal static System.Drawing.Bitmap _6374827_renaissance_wallpapers {
             get {
-                object obj = ResourceManager.GetObject("BackGround", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MinBack {
-            get {
-                object obj = ResourceManager.GetObject("MinBack", resourceCulture);
+                object obj = ResourceManager.GetObject("6374827-renaissance-wallpapers", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

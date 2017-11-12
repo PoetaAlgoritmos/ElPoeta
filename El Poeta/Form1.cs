@@ -44,7 +44,6 @@ namespace El_Poeta
                             string s = File.ReadAllText(openFileDialog1.FileName);
                             textBox1.Text = s;
                             string Prueba = textBox1.Text;
-                            Console.WriteLine(Prueba);
                         }
                     }
                 }
@@ -58,7 +57,9 @@ namespace El_Poeta
 
         private void generate_Poem(object sender, EventArgs e)
         {
-
+            N_Grams n_Grams = new N_Grams();
+            n_Grams.generateNGram(textBox1.Text, 2);
         }
+
     }
 }
