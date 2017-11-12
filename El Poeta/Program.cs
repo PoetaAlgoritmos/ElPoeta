@@ -15,7 +15,7 @@ namespace El_Poeta
         static void Main()
         {
             N_Grams test = new N_Grams();
-            test.generateNGram();
+            test.GenerateNGram();
         }
     }
 }

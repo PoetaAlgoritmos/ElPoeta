@@ -8,7 +8,7 @@ namespace El_Poeta
 {
     class N_Grams
     {
-        public void generateNGram()
+        public void GenerateNGram()
         {
             while (true)
             {
@@ -23,8 +23,13 @@ namespace El_Poeta
                     string text = Console.ReadLine();
                     Console.WriteLine("Porfavor ingrese el n de los N-Grams");
                     int n_size = Int32.Parse(Console.ReadLine());
-                    Char[] pattern = { ',', '\n', '.', ' ', ':', ';', '!', '?', '\r', '\"', '[', ']', '(', ')' };
+                    //Separamos el texto a solo las palabras
+                    Char[] pattern = { ',', '\n', '.', ' ', ':', ';', '!', '?', '\r', '\"', '[', ']', '(', ')'};
                     string[] elements = text.Split(pattern);
+                    var temp_elements = new List<String>(elements);
+                    temp_elements.RemoveAll(IsNull);
+                    elements = temp_elements.ToArray();
+                    //Creamos el diccionario del poema
                     Dictionary<int, string> dict = new Dictionary<int, string>();
                     int key = 0;
                     List<String> values = new List<string>();
@@ -36,7 +41,7 @@ namespace El_Poeta
                         {
                             try
                             {
-                                temp_string += elements[x + i];
+                                temp_string += elements[x + i].ToLower();
                                 temp_string += " ";
                             }
                             catch (IndexOutOfRangeException)
@@ -47,7 +52,8 @@ namespace El_Poeta
                         //Console.WriteLine(temp_string);
                         if (dict.ContainsValue(temp_string))
                         {
-                            int position = values.BinarySearch(temp_string);
+                            //Console.WriteLine(values.BinarySearch("i was "));
+                            int position = GetPosition(values, temp_string);
                             apariciones[position] = apariciones[position] + 1;
                             Console.WriteLine("El valor ya se encuentra en el diccionario");
                         }
@@ -86,6 +92,32 @@ namespace El_Poeta
             {
                 Console.WriteLine(string.Format("{0} está repetido {1} veces.", grouping.Key, grouping.Count()));
             }
+        }
+
+        private static bool IsNull(String s)
+        {
+            if (s == String.Empty)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public int GetPosition(List<String> lista, String valor)
+        {
+            Int32 result = -1;
+            for (int x = 0; x < lista.Capacity; x++)
+            {
+                if (lista[x] == valor)
+                {
+                    return x;
+                }
+            }
+            return result;
         }
 
     }
