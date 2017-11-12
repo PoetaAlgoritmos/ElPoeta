@@ -58,7 +58,8 @@ namespace El_Poeta
         private void generate_Poem(object sender, EventArgs e)
         {
             N_Grams n_Grams = new N_Grams();
-            n_Grams.generateNGram(textBox1.Text, 2);
+            //n_Grams.generateNGram(textBox1.Text, 2);
+            n_Grams.readPoems("C:\\Users\\Joseph Salas\\Desktop\\PoemRepository.txt");
         }
 
     }

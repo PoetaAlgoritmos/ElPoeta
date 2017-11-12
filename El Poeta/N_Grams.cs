@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,6 +96,30 @@ namespace El_Poeta
                 }
             }
             return result;
+        }
+
+        public void readPoems(string Poems)
+        {
+            try
+            {   // Open the text file using a stream reader.
+                using (StreamReader sr = new StreamReader(Poems))
+                {
+                    // Read the stream to a string, and write the string to the console.
+                    String all_Poems = sr.ReadToEnd();
+                    char separator = '*';
+                    string[] elements = all_Poems.Split(separator);
+                    for (int i = 0; i < elements.Length; i++)
+                    {
+                        Console.WriteLine(elements[i]);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
+
         }
     }
 }
