@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace El_Poeta
 {
     //Cada individuo de la poblacion 
-    class DNA<T>
+    class Individual<T>
     {
         //Se crea un array que va a contener los genes
         public T[] Genes { get; private set; }
@@ -20,7 +20,7 @@ namespace El_Poeta
         private Func<int, float> fitnessFunction;
         //El tamaño del array de genes, el random del crossover, referencia a una funcion que devuelve un objeto de tipo T
         //La funcion de adaptabilidad
-        public DNA(int size, Random random, Func<T> getRandomGene, Func<int, float> fitnessFunction, bool shouldInitGenes = true)
+        public Individual(int size, Random random, Func<T> getRandomGene, Func<int, float> fitnessFunction, bool shouldInitGenes = true)
         {
             //Crea el array del tamaño que dice el constructor
             Genes = new T[size];
@@ -45,10 +45,10 @@ namespace El_Poeta
         }
         //Cruce de genes, retorna un objeto DNA
         //Cruza con otro individuo
-        public DNA<T> Crossover(DNA<T> otherParent)
+        public Individual<T> Crossover(Individual<T> otherParent)
         {
             //Se crea un nuevo hijo de igual tipo y con el largo del len de los padres
-            DNA<T> child = new DNA<T>(Genes.Length, random, getRandomGene, fitnessFunction, shouldInitGenes: false);
+            Individual<T> child = new Individual<T>(Genes.Length, random, getRandomGene, fitnessFunction, shouldInitGenes: false);
             //Combina los genes de os padres para generar los del hijo
             //Flip a coin
             for (int i = 0; i < Genes.Length; i++)

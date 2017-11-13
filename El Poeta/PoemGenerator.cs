@@ -14,15 +14,14 @@ namespace El_Poeta
          int populationSize = 200;
          float mutationRate = 0.01f;
          int elitism = 5;
-        int numCharsPerText = 15000;
-
-        private GeneticAlgorithm<char> ga;
-        private System.Random random;
+         private GeneticAlgorithm<char> ga;
+         private System.Random random;
 
         void Start()
         {
             random = new System.Random();
-            ga = new GeneticAlgorithm<char>(populationSize, targetString.Length, random, GetRandomCharacter, FitnessFunction, elitism, mutationRate);
+            ga = new GeneticAlgorithm<char>(populationSize, targetString.Length, random, GetRandomCharacter, 
+                FitnessFunction, elitism, mutationRate);
         }
 
         void Update()
@@ -39,6 +38,8 @@ namespace El_Poeta
             return validCharacters[i];
         }
 
+
+        //Funcion de adaptabilidad, aqui va la similitud de documentos
         private float FitnessFunction(int index)
         {
             float score = 0;

@@ -21,6 +21,19 @@ namespace El_Poeta
             return result;
         }
 
+
+        public int Chebyshev(List<Int32> histograma_1, List<Int32> histograma_2)
+        {
+            List<Int32> result = new List<int>();
+            for (int x = 0; x < histograma_1.Capacity; x++)
+            {
+                int temp_result = histograma_1.ElementAt(x) - histograma_2.ElementAt(x);
+                temp_result = Math.Abs(temp_result);
+                result.Add(temp_result);
+            }
+            return result.Max();
+        }
+
         public List<Int32> CreateHistogram(List<String> lista_1, List<String> lista_2, List<Int32> posicion)
         {
             //Se crea la lista con la union de los n-grams de ambos poemas

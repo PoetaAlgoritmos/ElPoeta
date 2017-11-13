@@ -9,7 +9,7 @@ namespace El_Poeta
     class GeneticAlgorithm<T>
     {
         //Para empezar se crea una lista con la poblacion inicial
-        public List<DNA<T>> Population { get; private set; }
+        public List<Individual<T>> Population { get; private set; }
         //Cuantas generacion han pasado 
         public int Generation { get; private set; }
         //Almacena la mejor adaptabilidad de la polacion 
@@ -21,7 +21,7 @@ namespace El_Poeta
         //Almacena la tasa de mutacion
         public float MutationRate;
         //Crea una nueva poblacion de individuos
-        private List<DNA<T>> newPopulation;
+        private List<Individual<T>> newPopulation;
         private Random random;
         //Suma de toda la adaptablidad de cada individuo de la poblacion
         private float fitnessSum;
@@ -39,8 +39,8 @@ namespace El_Poeta
             Elitism = elitism;
             MutationRate = mutationRate;
             //Lista de individuos que componen la poblacion
-            Population = new List<DNA<T>>(populationSize);
-            newPopulation = new List<DNA<T>>(populationSize);
+            Population = new List<Individual<T>>(populationSize);
+            newPopulation = new List<Individual<T>>(populationSize);
             this.random = random;
             this.dnaSize = dnaSize;
             this.getRandomGene = getRandomGene;
@@ -50,14 +50,14 @@ namespace El_Poeta
             //Crea los elementos de la poblacion 
             for (int i = 0; i < populationSize; i++)
             {
-                Population.Add(new DNA<T>(dnaSize, random, getRandomGene, fitnessFunction, shouldInitGenes: true));
+                Population.Add(new Individual<T>(dnaSize, random, getRandomGene, fitnessFunction, shouldInitGenes: true));
             }
         }
 
         //Funcion principal de la clase, crear nuevas generaciones 
-        public void NewGeneration(int numNewDNA = 0, bool crossoverNewDNA = false)
+        public void NewGeneration(int numNewIndividual = 0, bool crossoverNewIndividual = false)
         {
-            int finalCount = Population.Count + numNewDNA;
+            int finalCount = Population.Count + numNewIndividual;
             //Si el tamaño de la poblacion es 0, se sale 
             if (finalCount <= 0)
             {
@@ -68,7 +68,7 @@ namespace El_Poeta
             {
                 //Calculo de funcion de adaptabilidad
                 CalculateFitness();
-                Population.Sort(CompareDNA);
+                Population.Sort(CompareIndividual);
             }
             newPopulation.Clear();
 
@@ -78,13 +78,13 @@ namespace El_Poeta
                 {
                     newPopulation.Add(Population[i]);
                 }
-                else if (i < Population.Count || crossoverNewDNA)
+                else if (i < Population.Count || crossoverNewIndividual)
                 {
                     //Se hace el cruce de genes de los padres y nace un nuevo hijo
-                    DNA<T> parent1 = ChooseParent();
-                    DNA<T> parent2 = ChooseParent();
+                    Individual<T> parent1 = ChooseParent();
+                    Individual<T> parent2 = ChooseParent();
 
-                    DNA<T> child = parent1.Crossover(parent2);
+                    Individual<T> child = parent1.Crossover(parent2);
                     //Se muta el nuevo individuo dependiendo de la tasa de mutacion 
                     child.Mutate(MutationRate);
                     //Se agrega el nuevo individuo a la nueva poblacion 
@@ -92,18 +92,18 @@ namespace El_Poeta
                 }
                 else
                 {
-                    newPopulation.Add(new DNA<T>(dnaSize, random, getRandomGene, fitnessFunction, shouldInitGenes: true));
+                    newPopulation.Add(new Individual<T>(dnaSize, random, getRandomGene, fitnessFunction, shouldInitGenes: true));
                 }
             }
 
-            List<DNA<T>> tmpList = Population;
+            List<Individual<T>> tmpList = Population;
             Population = newPopulation;
             newPopulation = tmpList;
             //La generacion se aumenta en uno
             Generation++;
         }
 
-        public int CompareDNA(DNA<T> a, DNA<T> b)
+        public int CompareIndividual(Individual<T> a, Individual<T> b)
         {
             if (a.Fitness > b.Fitness)
             {
@@ -122,7 +122,7 @@ namespace El_Poeta
         public void CalculateFitness()
         {
             fitnessSum = 0;
-            DNA<T> best = Population[0];
+            Individual<T> best = Population[0];
             //Para toda la poblacion calcula la adaptabilidad de cada individuo
             for (int i = 0; i < Population.Count; i++)
             {
@@ -141,7 +141,7 @@ namespace El_Poeta
         }
 
         //Escoge un padre de acuerdo a su adaptabilidad 
-        private DNA<T> ChooseParent()
+        private Individual<T> ChooseParent()
         {
             double randomNumber = random.NextDouble() * fitnessSum;
             //Para cada individuo de la poblacion si el numero aleatorio es menor que la adaptabilidad del individuo
