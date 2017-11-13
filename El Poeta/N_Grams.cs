@@ -8,17 +8,55 @@ namespace El_Poeta
 {
     class N_Grams
     {
-        struct Values
-        {
-            public List<Int32> Histograma;
-            public Dictionary<int, String> Diccionario;
-            public List<String> N_Gram;
-        }
 
-        public Values GenerateDictionary(String text, int n_size)
+        public Dictionary<int, String> GenerateDictionary(String text, int n_size)
         {
             //Separamos el texto a solo las palabras
             Char[] pattern = { ',', '\n', '.', ' ', ':', ';', '!', '?', '\r', '\"', '[', ']', '(', ')'};
+            string[] elements = text.Split(pattern);
+            var temp_elements = new List<String>(elements);
+            temp_elements.RemoveAll(IsNull);
+            elements = temp_elements.ToArray();
+            //Creamos el diccionario del poema
+            Dictionary<int, string> dict = new Dictionary<int, string>();
+            int key = 0;
+            for (int x = 0; x < elements.Length; x++)
+            {
+                string temp_string = "";
+                for (int i = 0; i < n_size; i++)
+                {
+                    try
+                    {
+                        temp_string += elements[x + i].ToLower();
+                        temp_string += " ";
+                    }
+                    catch (IndexOutOfRangeException)
+                    {
+                        temp_string += " ";
+                    }
+                }
+                //Console.WriteLine(temp_string);
+                if (dict.ContainsValue(temp_string))
+                {
+                    //Do nothing
+                }
+                else
+                {
+                    dict.Add(key, temp_string);
+                }
+                key++;
+            }
+            foreach (var element in dict)
+            {
+                Console.WriteLine(element);
+            }
+            return dict;
+        }
+
+        public List<Int32> GenerateHistogram(String text, int n_size)
+        {
+            //Separamos el texto a solo las palabras
+            Char[] pattern = { ',', '\n', '.', ' ', ':', ';', '!', '?', '\r', '\"', '[', ']', '(', ')' };
             string[] elements = text.Split(pattern);
             var temp_elements = new List<String>(elements);
             temp_elements.RemoveAll(IsNull);
@@ -68,11 +106,64 @@ namespace El_Poeta
                 Console.WriteLine(num);
             }
 
-            Values result = new Values();
-            result.Diccionario = dict;
-            result.Histograma = apariciones;
-            result.N_Gram = values;
-            return result;
+            
+            return apariciones;
+        }
+
+        public List<String> GenerateNGram(String text, int n_size)
+        {
+            //Separamos el texto a solo las palabras
+            Char[] pattern = { ',', '\n', '.', ' ', ':', ';', '!', '?', '\r', '\"', '[', ']', '(', ')' };
+            string[] elements = text.Split(pattern);
+            var temp_elements = new List<String>(elements);
+            temp_elements.RemoveAll(IsNull);
+            elements = temp_elements.ToArray();
+            //Creamos el diccionario del poema
+            Dictionary<int, string> dict = new Dictionary<int, string>();
+            int key = 0;
+            List<String> values = new List<string>();
+            List<Int32> apariciones = new List<int>();
+            for (int x = 0; x < elements.Length; x++)
+            {
+                string temp_string = "";
+                for (int i = 0; i < n_size; i++)
+                {
+                    try
+                    {
+                        temp_string += elements[x + i].ToLower();
+                        temp_string += " ";
+                    }
+                    catch (IndexOutOfRangeException)
+                    {
+                        temp_string += " ";
+                    }
+                }
+                //Console.WriteLine(temp_string);
+                if (dict.ContainsValue(temp_string))
+                {
+                    //Console.WriteLine(values.BinarySearch("i was "));
+                    int position = GetPosition(values, temp_string);
+                    apariciones[position] = apariciones[position] + 1;
+                    Console.WriteLine("El valor ya se encuentra en el diccionario");
+                }
+                else
+                {
+                    apariciones.Add(1);
+                    values.Add(temp_string);
+                    dict.Add(key, temp_string);
+                }
+                key++;
+            }
+            foreach (var element in dict)
+            {
+                Console.WriteLine(element);
+            }
+            foreach (var num in apariciones)
+            {
+                Console.WriteLine(num);
+            }
+
+            return values;
         }
 
         public void Evelio()

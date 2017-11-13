@@ -34,6 +34,11 @@ namespace El_Poeta
             return result.Max();
         }
 
+        /* Funcion que crea un histograma para el poema de la lista_1 
+         * 
+         * 
+         * 
+         */
         public List<Int32> CreateHistogram(List<String> lista_1, List<String> lista_2, List<Int32> posicion)
         {
             //Se crea la lista con la union de los n-grams de ambos poemas
@@ -56,6 +61,7 @@ namespace El_Poeta
 
         }
 
+        //Funcion para obtener la posicion de un n-gram en la lista
         public int GetPosition(List<String> lista, String valor)
         {
             Int32 result = -1;
