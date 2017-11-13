@@ -1,0 +1,9 @@
+C:\Universidad\IV Semestre\Analisis\Progra_3\ElPoeta\El Poeta\bin\Release\El Poeta.exe.config
+C:\Universidad\IV Semestre\Analisis\Progra_3\ElPoeta\El Poeta\bin\Release\El Poeta.exe
+C:\Universidad\IV Semestre\Analisis\Progra_3\ElPoeta\El Poeta\bin\Release\El Poeta.pdb
+C:\Universidad\IV Semestre\Analisis\Progra_3\ElPoeta\El Poeta\obj\Release\El_Poeta.Form1.resources
+C:\Universidad\IV Semestre\Analisis\Progra_3\ElPoeta\El Poeta\obj\Release\El_Poeta.Properties.Resources.resources
+C:\Universidad\IV Semestre\Analisis\Progra_3\ElPoeta\El Poeta\obj\Release\El Poeta.csproj.GenerateResource.Cache
+C:\Universidad\IV Semestre\Analisis\Progra_3\ElPoeta\El Poeta\obj\Release\El Poeta.csproj.CoreCompileInputs.cache
+C:\Universidad\IV Semestre\Analisis\Progra_3\ElPoeta\El Poeta\obj\Release\El Poeta.exe
+C:\Universidad\IV Semestre\Analisis\Progra_3\ElPoeta\El Poeta\obj\Release\El Poeta.pdb
