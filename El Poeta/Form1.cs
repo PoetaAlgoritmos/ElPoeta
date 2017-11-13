@@ -62,5 +62,10 @@ namespace El_Poeta
             n_Grams.readPoems("C:\\Users\\Joseph Salas\\Desktop\\PoemRepository.txt");
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+       
+            
+        }
     }
 }

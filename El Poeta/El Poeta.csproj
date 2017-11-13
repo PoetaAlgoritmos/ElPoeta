@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Distance.cs" />
+    <Compile Include="DNA.cs" />
+    <Compile Include="GeneticAlgorithm.cs" />
     <Compile Include="N_Grams.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

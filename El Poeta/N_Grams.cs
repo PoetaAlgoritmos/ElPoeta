@@ -59,20 +59,6 @@ namespace El_Poeta
                 Console.WriteLine(num);
             }
         }
-
-
-
-        public void Evelio()
-        {
-            string h = "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda. El resto della concluían sayo de velarte, calzas de velludo para las fiestas, con sus pantuflos de lo mesmo, y los días de entresemana se honraba con su vellorí de lo más fino. Tenía en su casa una ama que pasaba de los cuarenta, y una sobrina que no llegaba a los veinte, y un mozo de campo y plaza, que así ensillaba el rocín como tomaba la podadera. Frisaba la edad de nuestro hidalgo con los cincuenta años; era de complexión recia, seco de carnes, enjuto de rostro, gran madrugador y amigo de la caza. Quieren decir que tenía el sobrenombre de Quijada, o Quesada";
-            string[] separators = { ",", "\n", ".", " ", ":", ";", "!", "?", "\r", "\"", "[", "]", "(", ")" };
-            string[] fields = h.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            foreach (var grouping in fields.GroupBy(t => t).Where(t => t.Count() >= 1))
-            {
-                Console.WriteLine(string.Format("{0} está repetido {1} veces.", grouping.Key, grouping.Count()));
-            }
-        }
-
         public static bool IsNull(String s)
         {
             if (s == String.Empty)
@@ -110,7 +96,7 @@ namespace El_Poeta
                     string[] elements = all_Poems.Split(separator);
                     for (int i = 0; i < elements.Length; i++)
                     {
-                        Console.WriteLine(elements[i]);
+                        generateNGram(elements[i], 3);
                     }
                 }
             }
