@@ -14,7 +14,7 @@ namespace El_Poeta
             double result = 0;
             for (int x = 0; x < histograma_1.Capacity; x++)
             {
-                double temp_result = histograma_1.ElementAt(x) + histograma_2.ElementAt(x);
+                double temp_result = histograma_1.ElementAt(x) - histograma_2.ElementAt(x);
                 temp_result = Math.Pow(temp_result, 2);
                 result += temp_result;
             }
@@ -32,6 +32,18 @@ namespace El_Poeta
                 result.Add(temp_result);
             }
             return result.Max();
+        }
+
+        public int Personal(List<Int32> histograma_1, List<Int32> histograma_2)
+        {
+            List<Int32> result = new List<int>();
+            for (int x = 0; x < histograma_1.Capacity; x++)
+            {
+                int temp_result = histograma_1.ElementAt(x) - histograma_2.ElementAt(x);
+                temp_result = Math.Abs(temp_result);
+                result.Add(temp_result);
+            }
+            return result.Max() - result.Min();
         }
 
         /* Funcion que crea un histograma para el poema de la lista_1 
